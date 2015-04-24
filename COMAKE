@@ -1,0 +1,13 @@
+#edit-mode: -*- python -*-
+#coding:utf8
+
+CXX('g++')
+CXXFLAGS('-D_GNU_SOURCE -D__STDC_LIMIT_MACROS -g -pipe -W -Wall -fPIC -fno-omit-frame-pointer')
+LDFLAGS('-lcrypto -levent -ldl -lpthread -lm -lrt')
+
+DEP_LIB(GLOB('./lib/*.a'))
+
+sources = GLOB('demo.cpp')
+
+APP('demo', sources)
+
