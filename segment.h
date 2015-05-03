@@ -12,6 +12,8 @@ struct seg_result_t;
 
 typedef struct token_t{
     const char* str;
+    int32_t len;
+    int32_t offset;
     int hprop;
     int lprop;
 } token_t;
@@ -32,6 +34,7 @@ public:
     int segment(const char* str, int len); 
     void get_basic_tokens(std::vector<token_t>& tokens);
     void get_cat_tokens(std::vector<token_t>& tokens);
+    void get_all_unique_tokens(std::vector<token_t>& tokens);
 
 private:
     int _init(uint32_t max_token_num);
