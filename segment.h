@@ -21,6 +21,7 @@ typedef struct token_t{
 class Segment {
 public:
     static int init(const char* path);
+    static void destroy();
     static Segment* create(uint32_t max_token_num);
 
 private:
@@ -28,6 +29,8 @@ private:
 
 private:
     Segment();
+
+public:
     virtual ~Segment();
 
 public: 
